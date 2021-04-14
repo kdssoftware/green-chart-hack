@@ -17,4 +17,4 @@ jobs:
       - name: update var
         id: update_var
         run: |
-          echo "daily_buff=0 >> $GITHUB_ENV          
+          echo "daily_buff=0" >> $GITHUB_ENV          
