@@ -1,9 +1,7 @@
 name: automatic commits daily
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+    - cron:  '36 * * * *'
   workflow_dispatch:
 jobs:
   build:
