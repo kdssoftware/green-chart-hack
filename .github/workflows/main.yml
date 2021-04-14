@@ -1,0 +1,20 @@
+name: automatic commits daily
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: add and commit
+        uses: EndBug/add-and-commit@v7.1.1
+        with:
+          remove: '${{env.github}}.pl'
+      - name: update var
+        id: update_var
+        run: |
+          echo "{github_buff}={${{env.github_buff}}+1}" >> $GITHUB_ENV          
