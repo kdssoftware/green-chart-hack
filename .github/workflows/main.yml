@@ -10,9 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "./files/${{ steps.vars.outputs.sha_short }}.txt"
+          FILE_DATA: "${{ steps.vars.outputs.sha_short }}"
       - name: add and commit
         uses: EndBug/add-and-commit@v7.1.1
         with:
+          cwd: './files'
+          add: ''
           remove: '${{env.daily_buff}}.pl'
       - name: update var
         id: update_var
