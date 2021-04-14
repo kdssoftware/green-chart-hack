@@ -20,4 +20,4 @@ jobs:
       - name: update var
         id: update_var
         run: |
-          echo "${{env.daily_buff}}={${{env.daily_buff}}+1}" >> $GITHUB_ENV          
+          echo "daily_buff={${{env.daily_buff}}+1}" >> $GITHUB_ENV          
