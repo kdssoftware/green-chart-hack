@@ -13,8 +13,8 @@ jobs:
       - name: add and commit
         uses: EndBug/add-and-commit@v7.1.1
         with:
-          remove: '${{env.github}}.pl'
+          remove: '${{env.daily_buff}}.pl'
       - name: update var
         id: update_var
         run: |
-          echo "${{github_buff}}={${{env.github_buff}}+1}" >> $GITHUB_ENV          
+          echo "${{env.daily_buff}}={${{env.daily_buff}}+1}" >> $GITHUB_ENV          
