@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        if: ${{ env.daily == '' }}
-        env:
-          daily_buff: 0
       - name: add and commit
         uses: EndBug/add-and-commit@v7.1.1
         with:
@@ -20,4 +17,4 @@ jobs:
       - name: update var
         id: update_var
         run: |
-          echo "daily_buff={${{env.daily_buff}}+1}" >> $GITHUB_ENV          
+          echo "daily_buff=0 >> $GITHUB_ENV          
