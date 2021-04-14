@@ -1,7 +1,7 @@
 name: automatic commits daily
 on:
   schedule:
-    - cron:  '36 * * * *'
+    - cron:  '* * * * *'
   workflow_dispatch:
 jobs:
   build:
