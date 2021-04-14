@@ -17,7 +17,7 @@ jobs:
       - uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "./files/${{ steps.vars.outputs.sha_short }}.pl"
-          FILE_DATA: "#!/usr/bin/perl\nuse strict;\nuse warnings;\nprint '${{steps.vars.outputs.sha_short}}';"
+          FILE_DATA: "#!/usr/bin/perl\r\nuse strict;\r\nuse warnings;\r\nprint '${{steps.vars.outputs.sha_short}}';"
       - name: add and commit
         uses: EndBug/add-and-commit@v7.1.1
         with:
