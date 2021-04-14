@@ -20,9 +20,7 @@ jobs:
       - name: add and commit
         uses: EndBug/add-and-commit@v7.1.1
         with:
-          cwd: './files'
-          add: ''
-          remove: '${{env.daily_buff}}.pl'
+          add: "./files/${{ steps.vars.outputs.sha_short }}.txt"
       - name: update var
         id: update_var
         run: |
