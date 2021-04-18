@@ -1,4 +1,4 @@
-# Daily-buff 📈
+# Green chart hack📈
 
 Want to fill your Github contribution graph <strong><span style="color:#080">🟩 Green 🟩</span></strong>?
 
