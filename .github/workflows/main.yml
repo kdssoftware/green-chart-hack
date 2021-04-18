@@ -1,5 +1,8 @@
 name: automatic commits daily
-on:
+on:  
+  push:
+    branches:
+      - main
   schedule:
     - cron:  '0 12 * * *'
   workflow_dispatch:
@@ -13,9 +16,9 @@ jobs:
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: "./files/${{ steps.vars.outputs.sha_short }}.pl"
-          FILE_DATA: "#!/usr/bin/perl\r\nuse strict;\r\nuse warnings;\r\nprint '${{steps.vars.outputs.sha_short}}';"
+          FILE_NAME: "./files/${{ steps.vars.outputs.sha_short }}.emojic"
+          FILE_DATA: "🟩Green chart hack - commit ${{ steps.vars.outputs.sha_short }}🟩"
       - name: add and commit
         uses: EndBug/add-and-commit@v7.1.1
         with:
-          add: "./files/${{ steps.vars.outputs.sha_short }}.pl"   
+          add: "./files/${{ steps.vars.outputs.sha_short }}.emojic"   
