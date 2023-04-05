@@ -8,4 +8,4 @@ This repository automatically creates 1 commit a day using <i>Github Actions</i>
 (**!Dont forget to start the github action workflow file `/.github/workflows/main.yml`** )
 
 Clean up all files is optional
-`rm -rf ./files/*.emoijc`
+`rm -rf ./files/*.emojic`
